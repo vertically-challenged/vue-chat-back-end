@@ -55,6 +55,7 @@ app.ws('/', (ws) => {
                     status: result.status,
                     message: messageObj.message,
                     userId: messageObj.userId,
+                    name: result.name,
                   }))
                 }
               })
