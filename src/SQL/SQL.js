@@ -3,6 +3,7 @@ const registerUserFunction = require('./customMethods/registerUser.js')
 const authenticationFunction = require('./customMethods/authentication.js')
 const sessionTerminationFunction = require('./customMethods/sessionTermination.js')
 const sendMessageFunction = require('./customMethods/sendMessage.js')
+const getDialogListFunction = require('./customMethods/getDialogList.js')
 
 const extendSQL = (sql) => {
   const extendedSQL = sql
@@ -34,6 +35,18 @@ const extendSQL = (sql) => {
     sessionId,
     sessionKey,
     message,
+    extendedSQL,
+    crp,
+  )
+
+  extendedSQL.getDialogList = (
+    userId,
+    sessionId,
+    sessionKey,
+  ) => getDialogListFunction(
+    userId,
+    sessionId,
+    sessionKey,
     extendedSQL,
     crp,
   )
